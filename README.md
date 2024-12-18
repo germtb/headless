@@ -25,3 +25,12 @@ typedef struct {} // your typedef definition
 
 #endif
 ```
+
+## Watch mode
+
+This tool does not have a watch mode. In OSX I use the following in my make files:
+
+```make
+headless:
+	@fswatch -e ".*" -i "\\.c$$" . | xargs -n1 -I {} sh -c 'headless "{}"'
+```
